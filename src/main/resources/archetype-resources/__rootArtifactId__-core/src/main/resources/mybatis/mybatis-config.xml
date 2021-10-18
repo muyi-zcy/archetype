@@ -1,0 +1,14 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 驼峰的自动映射 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+</configuration>

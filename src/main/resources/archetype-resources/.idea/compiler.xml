@@ -1,0 +1,33 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="${artifactId}-client" />
+        <module name="${artifactId}-common" />
+        <module name="${artifactId}-core" />
+        <module name="${artifactId}-task" />
+        <module name="${artifactId}-test" />
+        <module name="${artifactId}-web" />
+        <module name="${artifactId}-dependency" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="${artifactId}-client" options="-parameters" />
+      <module name="${artifactId}-common" options="-parameters" />
+      <module name="${artifactId}-core" options="-parameters" />
+      <module name="${artifactId}-dependency" options="-parameters" />
+      <module name="${artifactId}-task" options="-parameters" />
+      <module name="${artifactId}-test" options="-parameters" />
+      <module name="${artifactId}-web" options="-parameters" />
+    </option>
+  </component>
+</project>

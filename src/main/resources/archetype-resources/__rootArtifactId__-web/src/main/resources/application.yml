@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ${artifactId}
+  profiles:
+    active: local
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    locale: zh_CN
+    time-zone: GMT+8
