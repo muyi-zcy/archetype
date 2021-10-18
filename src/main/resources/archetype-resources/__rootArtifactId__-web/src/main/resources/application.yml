@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ${artifactId}
+    name: ${parentArtifactId}
   profiles:
     active: local
   jackson:

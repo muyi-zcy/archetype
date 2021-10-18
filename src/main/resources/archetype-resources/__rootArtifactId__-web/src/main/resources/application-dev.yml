@@ -35,7 +35,7 @@ spring:
         testWhileIdle: true
         timeBetweenEvictionRunsMillis: 7200000
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://192.168.1.101:3306/${artifactId}?autoReconnect=true&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
+        url: jdbc:mysql://192.168.1.101:3306/${parentArtifactId}?autoReconnect=true&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
         username: root
       names: master
     props:
@@ -53,7 +53,7 @@ dubbo:
   config-center:
     address: zookeeper://192.168.1.101:2181
   application:
-    name: ${artifactId}-provider
+    name: ${parentArtifactId}-provider
     qos-enable: false
   registry:
     address: zookeeper://192.168.1.101:2181
@@ -77,7 +77,7 @@ dubbo:
 elasticJob:
   zk:
     serverLists: 192.168.1.101:2181
-    namespace: ${artifactId}
+    namespace: ${parentArtifactId}
 nacos:
   config:
     server-addr: 192.168.1.101:8848
