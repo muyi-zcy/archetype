@@ -52,4 +52,16 @@
   <scm>
     <url>https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/muyi-base-dependencies/muyi-base</url>
   </scm>
+  <distributionManagement>
+    <repository>
+      <id>rdc-releases</id>
+      <name>5fc748008d483c39b25bcbe2</name>
+      <url>https://packages.aliyun.com/maven/repository/2054959-release-BdURFQ/</url>
+    </repository>
+    <snapshotRepository>
+      <id>rdc-snapshots</id>
+      <name>5fc748008d483c39b25bcbe2</name>
+      <url>https://packages.aliyun.com/maven/repository/2054959-snapshot-HrRHjE/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>

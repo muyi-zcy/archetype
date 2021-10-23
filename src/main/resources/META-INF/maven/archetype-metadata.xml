@@ -79,8 +79,35 @@
         </fileSet>
       </fileSets>
     </module>
-    <module id="${rootArtifactId}-task" dir="__rootArtifactId__-task" name="${rootArtifactId}-task" />
-    <module id="${rootArtifactId}-test" dir="__rootArtifactId__-test" name="${rootArtifactId}-test" />
-    <module id="${rootArtifactId}-dependency" dir="__rootArtifactId__-dependency" name="${rootArtifactId}-dependency" />
+    <module id="${rootArtifactId}-task" dir="__rootArtifactId__-task" name="${rootArtifactId}-task" >
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${rootArtifactId}-test" dir="__rootArtifactId__-test" name="${rootArtifactId}-test" >
+        <fileSets>
+          <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>src/main/java</directory>
+            <includes>
+              <include>**/*.java</include>
+            </includes>
+          </fileSet>
+        </fileSets>
+    </module>
+    <module id="${rootArtifactId}-dependency" dir="__rootArtifactId__-dependency" name="${rootArtifactId}-dependency" >
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
   </modules>
 </archetype-descriptor>
