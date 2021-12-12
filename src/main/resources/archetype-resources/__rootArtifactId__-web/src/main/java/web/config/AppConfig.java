@@ -17,7 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "${package}.*")
 @MapperScan("${package}.core.dao")
-@NacosPropertySource(dataId = "${parentArtifactId}.yaml",groupId = "${parentArtifactId}-dev", autoRefreshed = true)
+@NacosPropertySource(dataId = "${parentArtifactId}",groupId = "${parentArtifactId}-dev", autoRefreshed = true,type = ConfigType.YAML)
 public class AppConfig {
     public static void main(String[] args) {
         SpringApplication.run(AppConfig.class);
