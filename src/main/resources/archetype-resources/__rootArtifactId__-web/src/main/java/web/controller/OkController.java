@@ -30,9 +30,6 @@ public class OkController {
 
     @GetMapping("/ok")
     public Object ok(HttpServletRequest httpRequest) {
-        logger.info(systemInfoProperties.getSystemName());
-        logger.info(systemInfoProperties.getProfileActive());
-        logger.info(systemInfoProperties.getRunTime());
         return "ok";
     }
 }
