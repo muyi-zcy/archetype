@@ -4,7 +4,6 @@
 package ${package}.web.controller;
 
 import com.alibaba.nacos.api.config.annotation.NacosValue;
-import ${package}.base.start.properties.SystemInfoProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +22,6 @@ import javax.servlet.http.HttpServletRequest;
 public class OkController {
 
     private static final Logger logger = LoggerFactory.getLogger(OkController.class);
-
-    @Autowired
-    private SystemInfoProperties systemInfoProperties;
-
 
     @GetMapping("/ok")
     public Object ok(HttpServletRequest httpRequest) {

@@ -16,7 +16,7 @@ singleServerConfig:
   # 单个连接最大订阅数量
   subscriptionsPerConnection: 5
   # 客户端名称
-  clientName: axin
+  clientName:
   #  # 节点地址
   address: redis://192.168.1.101:6379
   # 发布和订阅连接的最小空闲连接数

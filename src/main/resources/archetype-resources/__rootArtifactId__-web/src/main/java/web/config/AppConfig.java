@@ -3,6 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.web.config;
 
+import com.alibaba.nacos.api.config.ConfigType;
 import com.alibaba.nacos.api.config.annotation.NacosConfigurationProperties;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
@@ -19,7 +20,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication(scanBasePackages = "${package}.*")
 @EnableDubbo(scanBasePackages = "${package}.*")
 @MapperScan("${package}.core.dao")
-@NacosPropertySource(dataId = "${parentArtifactId}",groupId = "${parentArtifactId}-dev", autoRefreshed = true,type = ConfigType.YAML)
+@NacosConfigurationProperties(dataId = "${parentArtifactId}",groupId = "${parentArtifactId}-dev", autoRefreshed = true,type = ConfigType.YAML)
 public class AppConfig {
     public static void main(String[] args) {
         SpringApplication.run(AppConfig.class);
