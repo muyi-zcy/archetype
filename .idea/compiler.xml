@@ -10,6 +10,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="muyi-base-archetype" />
+        <module name="archetype" />
       </profile>
     </annotationProcessing>
   </component>

@@ -3,6 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.web.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import com.alibaba.nacos.api.config.annotation.NacosValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,12 +18,9 @@ import javax.servlet.http.HttpServletRequest;
  * author: muyi
  * version: 1.0
  */
-
+@Slf4j
 @RestController
 public class OkController {
-
-    private static final Logger logger = LoggerFactory.getLogger(OkController.class);
-
     @GetMapping("/ok")
     public Object ok(HttpServletRequest httpRequest) {
         return "ok";
