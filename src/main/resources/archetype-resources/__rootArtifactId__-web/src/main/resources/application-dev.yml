@@ -35,7 +35,7 @@ spring:
         testWhileIdle: true
         timeBetweenEvictionRunsMillis: 7200000
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://192.168.1.101:3306/tech-muyi-demo?autoReconnect=true&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
+        url: jdbc:mysql://192.168.1.101:3306/${parentArtifactId}?autoReconnect=true&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
         username: root
       names: master
     props:
@@ -61,6 +61,8 @@ dubbo:
     address: spring-cloud://192.168.1.101:8848
   cloud:
     subscribed-services: '*'
+    retries: 0
+    check: false
 
 nacos:
   config:
