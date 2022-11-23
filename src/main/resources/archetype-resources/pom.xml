@@ -11,14 +11,52 @@
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <packaging>pom</packaging>
-    <version>${version}</version>
-
+    <version>${revision}</version>
+    
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <reverion>${version}</reverion>
+
     </properties>
 
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${artifactId}-client</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${artifactId}-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${artifactId}-core</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${artifactId}-dependency</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${artifactId}-task</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${artifactId}-test</artifactId>
+                <version>${revision}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

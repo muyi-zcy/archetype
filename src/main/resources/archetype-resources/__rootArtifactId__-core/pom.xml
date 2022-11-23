@@ -3,7 +3,7 @@
     <parent>
         <artifactId>${rootArtifactId}</artifactId>
         <groupId>${groupId}</groupId>
-        <version>${version}</version>
+        <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <packaging>jar</packaging>
@@ -19,12 +19,10 @@
         <dependency>
             <artifactId>${rootArtifactId}-client</artifactId>
             <groupId>${groupId}</groupId>
-            <version>${version}</version>
         </dependency>
         <dependency>
             <artifactId>${rootArtifactId}-dependency</artifactId>
             <groupId>${groupId}</groupId>
-            <version>${version}</version>
         </dependency>
     </dependencies>
     <build>

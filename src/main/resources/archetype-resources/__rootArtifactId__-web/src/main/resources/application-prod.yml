@@ -25,7 +25,7 @@ spring:
   shardingsphere:
     datasource:
       master:
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         initialSize: 100
         maxActive: 100
         maxWait: 3000
