@@ -9,6 +9,7 @@ import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * description: AppConfig
@@ -21,6 +22,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableDubbo(scanBasePackages = "${package}.*")
 @MapperScan("${package}.core.dao")
 @NacosConfigurationProperties(dataId = "${parentArtifactId}",groupId = "${parentArtifactId}-dev", autoRefreshed = true,type = ConfigType.YAML)
+@EnableTransactionManagement
 public class AppConfig {
     public static void main(String[] args) {
         SpringApplication.run(AppConfig.class);
