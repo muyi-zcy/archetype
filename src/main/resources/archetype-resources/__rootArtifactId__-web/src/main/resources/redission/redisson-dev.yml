@@ -12,7 +12,7 @@ singleServerConfig:
   # 命令重试发送时间间隔，单位：毫秒
   retryInterval: 1500
   # 密码
-  password: 123456
+  password: devRedisPasswd
   # 单个连接最大订阅数量
   subscriptionsPerConnection: 5
   # 客户端名称
@@ -36,6 +36,6 @@ singleServerConfig:
 # Netty线程池数量,默认值: 当前处理核数量 * 2
 #nettyThreads: 0
 # 编码
-codec: !<org.redisson.codec.JsonJacksonCodec> {}
+codec: !<tech.muyi.redis.CustomJsonJacksonCodec> {}
 # 传输模式
 transportMode : "NIO"
