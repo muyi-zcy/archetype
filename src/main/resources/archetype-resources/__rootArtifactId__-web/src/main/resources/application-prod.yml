@@ -22,25 +22,56 @@ spring:
   redis:
     redisson:
       file: classpath:redission/redisson-local.yml
-  shardingsphere:
-    datasource:
-      master:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        initialSize: 100
-        maxActive: 100
-        maxWait: 3000
-        minEvictableIdleTimeMillis: 7200000
-        minIdle: 100
-        password: devMysqlPasswd
-        testWhileIdle: true
-        timeBetweenEvictionRunsMillis: 7200000
-        type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://192.168.1.101:3306/${parentArtifactId}?autoReconnect=true&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
-        username: root
-      names: master
-    props:
-      sql:
-        show: true
+  datasource:
+    url: jdbc:mysql://192.168.1.101:3306/${parentArtifactId}?autoReconnect=true&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
+    username: root
+    password: devMysqlPasswd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      autoReconnect: true
+      # 初始化时建立物理连接的个数。初始化发生在显示调用 init 方法，或者第一次 getConnection 时
+      initial-size: 10
+      # 连接池中最小连接数量
+      min-idle: 10
+      # 连接池用最大连接数量
+      maxActive: 40
+      # 获取连接时最大等待时间，单位毫秒。
+      maxWait: 60000
+      # 关闭空闲连接的检测时间间隔 Destroy 线程会检测连接的间隔时间，如果连接空闲时间大于等于则关闭物理连接。
+      timeBetweenEvictionRunsMillis: 60000
+      # 连接的最小生存时间，连接保持空闲而不被驱逐的最小时间
+      minEvictableIdleTimeMillis: 40000
+      maxEvictableIdleTimeMillis: 180000
+      # 连接最大存活时间，默认是-1(不限制物理连接时间)，从创建连接开始计算，如果超过该时间，则会被清理
+      phyTimeoutMillis: 60000
+      # 验证数据库服务可用性的 sql，用来检测连接是否有效的 sql。oracle 应该写成 SELECT 1 FROM DUAL
+      validationQuery: SELECT 1
+      # 申请连接时检测空闲时间，根据空闲时间再检测连接是否有效，建议配置为 true，不影响性能，并且保证安全性。
+      testWhileIdle: true
+      # 申请连接时直接检测连接是否有效，申请连接时执行 validationQuery 检测连接是否有效，开启会降低性能。
+      testOnBorrow: false
+      # 归还连接时检测连接是否有效，归还连接时执行 validationQuery 检测连接是否有效，开启会降低性能。
+      testOnReturn: false
+      # 开启 PSCache
+      poolPreparedStatements: true
+      # 设置 PSCache 的值
+      maxPoolPreparedStatementPerConnectionSize: 20
+      # 连接出错后再尝试连接三次
+      connectionErrorRetryAttempts: 3
+      # 数据库服务宕机自动重连机制
+      breakAfterAcquireFailure: true
+      # 连接出错后重试时间间隔
+      timeBetweenConnectErrorMillis: 300000
+      # 异步初始化策略
+      asyncInit: true
+      # 是否自动回收超时连接
+      remove-abandoned: true
+      # 超时时间(秒)
+      remove-abandoned-timeout: 1800
+      # 事务超时时间
+      transaction-query-timeout: 6000
+      keep-alive: true
   cloud:
     nacos:
       discovery:
