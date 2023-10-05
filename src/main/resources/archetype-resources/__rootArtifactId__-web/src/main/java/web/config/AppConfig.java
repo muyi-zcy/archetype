@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication(scanBasePackages = "${package}.*")
 @EnableDubbo(scanBasePackages = "${package}.*")
 @MapperScan("${package}.core.dao")
-@NacosConfigurationProperties(dataId = "${parentArtifactId}",groupId = "${parentArtifactId}-dev", autoRefreshed = true,type = ConfigType.YAML)
+@NacosConfigurationProperties(dataId = "${parentArtifactId}",groupId = "${parentArtifactId}", autoRefreshed = true,type = ConfigType.YAML)
 @EnableTransactionManagement
 public class AppConfig {
     public static void main(String[] args) {

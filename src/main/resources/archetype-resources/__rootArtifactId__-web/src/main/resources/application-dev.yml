@@ -83,11 +83,11 @@ spring:
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
-  type-aliases-package: tech.muyi.core.dao
+  type-aliases-package: ${package}.core.dao
 
 dubbo:
   scan:
-    basePackages: tech.muyi
+    basePackages: ${package}
   protocol:
     name: dubbo
     port: -1
