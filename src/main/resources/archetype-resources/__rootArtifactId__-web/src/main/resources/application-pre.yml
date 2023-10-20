@@ -76,10 +76,17 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.1.101:8848
+        namespace: ee548d4a-a417-4a24-bc70-7a12e28b5227
+        group: ${spring.application.name}
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: ${package}.core.dao
+
+mybatis-plus:
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 dubbo:
   scan:
@@ -94,7 +101,9 @@ dubbo:
     subscribed-services: '*'
     retries: 0
     check: false
-
+  application:
+    name: ${spring.application.name}
+    version: 1.0.0
 nacos:
   config:
     server-addr: 192.168.1.101:8848
