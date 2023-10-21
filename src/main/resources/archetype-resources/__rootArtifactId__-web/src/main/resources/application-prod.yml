@@ -77,7 +77,7 @@ spring:
       discovery:
         server-addr: 192.168.1.101:8848
         namespace: ee548d4a-a417-4a24-bc70-7a12e28b5227
-        group: ${spring.application.name}
+
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
@@ -89,6 +89,9 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 dubbo:
+  application:
+    name: ${spring.application.name}
+    version: 1.0.0
   scan:
     basePackages: ${package}
   protocol:
@@ -96,14 +99,10 @@ dubbo:
     port: -1
     threads: 100
   registry:
-    address: spring-cloud://192.168.1.101:8848
+    address: spring-cloud://192.168.1.101:8848?namespace=ee548d4a-a417-4a24-bc70-7a12e28b5227
   cloud:
     subscribed-services: '*'
-    retries: 0
-    check: false
-  application:
-    name: ${spring.application.name}
-    version: 1.0.0
+
 nacos:
   config:
     server-addr: 192.168.1.101:8848
