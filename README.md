@@ -1,5 +1,5 @@
  # archetype
-> 前提：maven 使用https://github.com/pomole/muyi-base.git 下的setting.xml文件
+> 前提：maven 使用https://github.com/muyi-zcy/muyi-base.git 下的setting.xml文件
 
 ## 1、拉去本项目代码到本地
 ## 2、使用idea 打开本项目
