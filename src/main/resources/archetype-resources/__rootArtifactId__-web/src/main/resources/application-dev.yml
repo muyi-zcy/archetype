@@ -72,32 +72,36 @@ spring:
       # 事务超时时间
       transaction-query-timeout: 6000
       keep-alive: true
-
-    props:
-      sql:
-        show: true
   cloud:
     nacos:
       discovery:
         server-addr: 192.168.1.101:8848
+        namespace: ee548d4a-a417-4a24-bc70-7a12e28b5227
+
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
-  type-aliases-package: tech.muyi.core.dao
+  type-aliases-package: ${package}.core.dao
+
+mybatis-plus:
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 dubbo:
+  application:
+    name: ${spring.application.name}
+    version: 1.0.0
   scan:
-    basePackages: tech.muyi
+    basePackages: ${package}
   protocol:
     name: dubbo
     port: -1
     threads: 100
   registry:
-    address: spring-cloud://192.168.1.101:8848
+    address: spring-cloud://192.168.1.101:8848?namespace=ee548d4a-a417-4a24-bc70-7a12e28b5227
   cloud:
     subscribed-services: '*'
-    retries: 0
-    check: false
 
 nacos:
   config:
