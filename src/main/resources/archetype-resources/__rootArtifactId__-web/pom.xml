@@ -21,6 +21,11 @@
             <artifactId>${rootArtifactId}-core</artifactId>
             <groupId>${groupId}</groupId>
         </dependency>
+
+        <dependency>
+            <artifactId>${rootArtifactId}-task</artifactId>
+            <groupId>${groupId}</groupId>
+        </dependency>
     </dependencies>
 
 </project>
