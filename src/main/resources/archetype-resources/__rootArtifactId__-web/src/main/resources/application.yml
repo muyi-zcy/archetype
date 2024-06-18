@@ -10,4 +10,4 @@ spring:
     time-zone: GMT+8
 
 logging:
-  config: classpath:logback.xml
+  config: classpath:logback-${spring.profiles.active}.xml

@@ -78,15 +78,18 @@ spring:
         server-addr: 192.168.1.101:8848
         namespace: ee548d4a-a417-4a24-bc70-7a12e28b5227
 
+
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: ${package}.core.dao
 
 mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/*.xml
   configuration:
     default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
 
 dubbo:
   application:
@@ -102,8 +105,3 @@ dubbo:
     address: spring-cloud://192.168.1.101:8848?namespace=ee548d4a-a417-4a24-bc70-7a12e28b5227
   cloud:
     subscribed-services: '*'
-
-nacos:
-  config:
-    server-addr: 192.168.1.101:8848
-    namespace: e21577a8-c9f9-4320-bf4d-9c4b7fa83494

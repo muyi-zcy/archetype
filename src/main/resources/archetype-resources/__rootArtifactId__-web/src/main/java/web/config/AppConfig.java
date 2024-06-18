@@ -25,6 +25,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class AppConfig {
     public static void main(String[] args) {
-        SpringApplication.run(AppConfig.class);
+        SpringApplication.run(AppConfig.class, args);
     }
 }
