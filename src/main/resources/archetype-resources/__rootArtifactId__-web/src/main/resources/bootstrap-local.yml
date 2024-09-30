@@ -77,6 +77,13 @@ spring:
       discovery:
         server-addr: 192.168.1.101:8848
         namespace: ee548d4a-a417-4a24-bc70-7a12e28b5227
+        group: tech-muyi
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        group: ${spring.cloud.nacos.discovery.group}
+        file-extension: yaml
+        refresh-enabled: true
 
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
@@ -94,6 +101,7 @@ dubbo:
   application:
     name: ${spring.application.name}
     version: 1.0.0
+    qosEnable: false
   scan:
     basePackages: ${package}
   protocol:
@@ -101,6 +109,6 @@ dubbo:
     port: -1
     threads: 100
   registry:
-    address: spring-cloud://192.168.1.101:8848?namespace=ee548d4a-a417-4a24-bc70-7a12e28b5227
+    address: nacos://${spring.cloud.nacos.discovery.server-addr}?namespace=${spring.cloud.nacos.discovery.namespace}
   cloud:
     subscribed-services: '*'
