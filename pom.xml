@@ -31,27 +31,6 @@
   <description>Parent pom providing dependency and plugin management for applications
 		built with Maven</description>
 
-  <url>https://projects.spring.io/spring-boot/#/spring-boot-starter-parent/muyi-base-dependencies/muyi-base</url>
-
-  <developers>
-    <developer>
-      <name>Pivotal</name>
-      <email>info@pivotal.io</email>
-      <organization>Pivotal Software, Inc.</organization>
-      <organizationUrl>https://www.spring.io</organizationUrl>
-    </developer>
-  </developers>
-
-  <licenses>
-    <license>
-      <name>Apache License, Version 2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
-    </license>
-  </licenses>
-
-  <scm>
-    <url>https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/muyi-base-dependencies/muyi-base</url>
-  </scm>
   <distributionManagement>
     <repository>
       <id>rdc-releases</id>
